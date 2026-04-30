@@ -25,10 +25,13 @@ modules:
       - kitty
       - code
       - dolphin
+      - ark
  
     remove:
       - alacritty
       - thunar
+      - thunar-archive-plugin
+      - xarchiver
 
   - type: script
     scripts:
