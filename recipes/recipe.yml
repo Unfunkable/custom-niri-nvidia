@@ -29,10 +29,6 @@ modules:
  
     remove:
       - alacritty
-      - thunar
-      - thunar-archive-plugin
-      - thunar-volman
-      - xarchiver
 
   - type: script
     scripts:
