@@ -5,7 +5,7 @@ curl --proto '=https' --tlsv1.2 -sSf \
   https://install.determinate.systems/nix | \
   sh -s -- install linux \
     --no-confirm \
-    --init none \
+    --init systemd \
     --extra-conf "trusted-users = root @wheel" \
     --extra-conf "experimental-features = nix-command flakes"
  
