@@ -22,13 +22,19 @@ fi
 
 "$nix_bin" --version
 
-config_output="$("$nix_bin" config show)"
-experimental_features="$(
-  grep -E '^(experimental-features|extra-experimental-features) = ' <<<"$config_output" || true
-)"
+tmp_flake_dir="$(mktemp -d)"
+trap 'rm -rf "$tmp_flake_dir"' EXIT
 
-if [[ "$experimental_features" != *"nix-command"* ]] || [[ "$experimental_features" != *"flakes"* ]]; then
+cat >"$tmp_flake_dir/flake.nix" <<'EOF'
+{
+  description = "nix install smoke check";
+
+  outputs = { self }: {
+  };
+}
+EOF
+
+if ! "$nix_bin" flake metadata --offline "path:$tmp_flake_dir" >/dev/null; then
   echo "Nix install failed: flakes support is not enabled" >&2
-  echo "$config_output" >&2
   exit 1
 fi
