@@ -24,9 +24,12 @@ modules:
       - dms
       - kitty
       - code
+      - dolphin
  
     remove:
       - alacritty
+      - thunar
+      - xdg-desktop-portal-wlr
 
   - type: script
     scripts:
@@ -34,5 +37,7 @@ modules:
 
   - type: files
     files:
+      - source: system/
+        destination: /
       - source: home/
-      - destination: /etc/skel/
+        destination: /etc/skel/
