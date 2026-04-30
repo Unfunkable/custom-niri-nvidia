@@ -22,10 +22,13 @@ fi
 
 "$nix_bin" --version
 
-experimental_features="$("$nix_bin" config show extra-experimental-features)"
+config_output="$("$nix_bin" config show)"
+experimental_features="$(
+  grep -E '^(experimental-features|extra-experimental-features) = ' <<<"$config_output" || true
+)"
 
 if [[ "$experimental_features" != *"nix-command"* ]] || [[ "$experimental_features" != *"flakes"* ]]; then
   echo "Nix install failed: flakes support is not enabled" >&2
-  echo "$experimental_features" >&2
+  echo "$config_output" >&2
   exit 1
 fi
