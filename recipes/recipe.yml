@@ -29,7 +29,6 @@ modules:
     remove:
       - alacritty
       - thunar
-      - xdg-desktop-portal-wlr
 
   - type: script
     scripts:
