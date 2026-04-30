@@ -31,3 +31,8 @@ modules:
   - type: script
     scripts:
       - nix-install.sh
+
+  - type: files
+    files:
+      - source: home/
+      - destination: /etc/skel/
