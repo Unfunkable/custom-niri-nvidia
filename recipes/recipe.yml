@@ -30,10 +30,6 @@ modules:
     remove:
       - alacritty
 
-  - type: script
-    scripts:
-      - nix-install.sh
-
   - type: files
     files:
       - source: system/
