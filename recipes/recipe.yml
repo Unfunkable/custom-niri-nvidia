@@ -13,22 +13,25 @@ image-version: latest # latest is also supported if you want new updates ASAP
 # you can include multiple instances of the same module
 
 modules:
-  - type: rpm-ostree
+  - type: dnf
  
     repos:
-      - https://copr.fedorainfracloud.org/coprs/avengemedia/dms/repo/fedora-%OS_VERSION%/avengemedia-dms-fedora-%OS_VERSION%.repo
- 
+      - avengemedia/dms
+      - solopasha/hyprland
       - https://packages.microsoft.com/yumrepos/vscode/config.repo
  
     install:
-      - dms
-      - kitty
-      - code
-      - dolphin
-      - ark
+      packages:
+        - dms
+        - kitty
+        - code
+        - dolphin
+        - ark
+        - hyprqt6engine
  
     remove:
-      - alacritty
+      packages:
+        - alacritty
 
   - type: files
     files:

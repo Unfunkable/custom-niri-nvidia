@@ -625,9 +625,9 @@ binds {
     // CUSTOM
 }
 
-//environment {
-//    QT_QPA_PLATFORMTHEME "kde"
-//}
+environment {
+    QT_QPA_PLATFORMTHEME "hyprqt6engine"
+}
 
 include "dms/outputs.kdl"
 include "dms/binds.kdl"
