@@ -18,7 +18,6 @@ modules:
     repos:
       copr:
       - avengemedia/dms
-      - solopasha/hyprland
 
       files:
         - https://packages.microsoft.com/yumrepos/vscode/config.repo
@@ -30,7 +29,7 @@ modules:
         - code
         - dolphin
         - ark
-        - hyprqt6engine
+        - qt6ct
  
     remove:
       packages:
