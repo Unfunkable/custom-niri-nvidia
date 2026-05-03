@@ -16,9 +16,14 @@ modules:
   - type: dnf
  
     repos:
-      - avengemedia/dms
-      - solopasha/hyprland
-      - https://packages.microsoft.com/yumrepos/vscode/config.repo
+    - type: copr
+      repo: avengemedia/dms
+
+    - type: copr
+      repo: solopasha/hyprland
+
+    - type: repo
+      url: https://packages.microsoft.com/yumrepos/vscode/config.repo
  
     install:
       packages:
