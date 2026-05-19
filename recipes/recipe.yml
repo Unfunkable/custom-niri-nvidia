@@ -29,7 +29,9 @@ modules:
         - code
         - dolphin
         - ark
+        - kwrite
         - qt6ct
+        - openrgb-udev-rules
  
     remove:
       packages:
