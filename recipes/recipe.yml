@@ -34,14 +34,27 @@ modules:
         - qt6ct-kde
         - openrgb-udev-rules
         - podman-compose
+        - greetd
+        - dms-greeter
+        - acl
+        - zsh
+        - util-linux-user
  
     remove:
       packages:
         - alacritty
+        - sddm
 
   - type: files
     files:
-      - source: system/
+      - source: system
         destination: /
-      - source: home/
+      - source: home
         destination: /etc/skel/
+
+  - type: systemd
+    system:
+      enabled:
+        - greetd.service
+      disabled:
+        - sddm.service
