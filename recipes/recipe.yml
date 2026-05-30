@@ -1,12 +1,12 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
 # image will be published to ghcr.io/<user>/<name>
-name: custom-niri-nvidia
+name: custom-aurora-dx-nvidia
 # description will be included in the image's metadata
-description: Personal Niri image based on Wayblue's image
+description: Personal Aurora DX image
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/wayblueorg/niri-nvidia-open
+base-image: ghcr.io/ublue-os/aurora-dx-nvidia-open
 image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -15,46 +15,14 @@ image-version: latest # latest is also supported if you want new updates ASAP
 modules:
   - type: dnf
  
-    repos:
-      copr:
-      - avengemedia/dms
-      - solopasha/hyprland
-
-      files:
-        - https://packages.microsoft.com/yumrepos/vscode/config.repo
- 
     install:
       packages:
-        - dms
         - kitty
-        - code
-        - dolphin
-        - ark
-        - kwrite
-        - qt6ct-kde
         - openrgb-udev-rules
         - podman-compose
-        - greetd
-        - dms-greeter
-        - acl
         - zsh
         - util-linux-user
  
     remove:
       packages:
         - alacritty
-        - sddm
-
-  - type: files
-    files:
-      - source: system
-        destination: /
-      - source: home
-        destination: /etc/skel/
-
-  - type: systemd
-    system:
-      enabled:
-        - greetd.service
-      disabled:
-        - sddm.service
