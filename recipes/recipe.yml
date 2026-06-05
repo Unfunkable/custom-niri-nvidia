@@ -32,7 +32,7 @@ modules:
         - ark
         - kwrite
         - qt6ct-kde
-        - openrgb-udev-rules
+        - openrgb
         - podman-compose
         - greetd
         - dms-greeter
