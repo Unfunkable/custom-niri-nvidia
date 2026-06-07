@@ -39,6 +39,7 @@ modules:
         - acl
         - zsh
         - util-linux-user
+        - smartmontools
  
     remove:
       packages:
