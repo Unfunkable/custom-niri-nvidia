@@ -58,5 +58,3 @@ modules:
     system:
       enabled:
         - greetd.service
-      disabled:
-        - sddm.service
