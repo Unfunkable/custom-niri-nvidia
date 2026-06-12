@@ -32,6 +32,8 @@ modules:
         - ark
         - kwrite
         - qt6ct-kde
+        - plasma-breeze-qt6
+        - breeze-icon-theme
         - openrgb
         - podman-compose
         - greetd
